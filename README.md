@@ -1,2 +1,2 @@
 # express-simple-restapi
-Basic CRUD REST API using express.
+Basic CRUD REST API from a JSON file using express.
