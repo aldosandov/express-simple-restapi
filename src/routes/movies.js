@@ -37,4 +37,24 @@ router.delete('/:id', (req, res) => {
 })
 
 
+router.put('/:id', (req, res) => {
+    const { id } = req.params;
+    const { title, director, year, rating } = req.body;
+   
+    if (title && director && year && rating && id <= movies.length) {
+        _.each(movies, (movie, idx) => {
+            if (movie.id == id) {
+                movie.title = title;
+                movie.director = director;
+                movie.year = year;
+                movie.rating = rating;
+                res.json(movies);            
+            }
+        });
+    } else {
+        res.status(500).json({error: 'ID not found / request incomplete.'})
+    }    
+});
+
 module.exports = router;
+
