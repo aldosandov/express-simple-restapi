@@ -12,7 +12,7 @@ app.use(bodyParser.json())
 
 // Routes
 app.use('/api/movies', require('./routes/movies'));
-
+app.use('/api/users', require('./routes/users'));
 
 // Middlewares
 app.use(morgan('dev'));
